@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Result: Codable {
+struct Result: Decodable {
     let gender: String
     let name: Name
     let location: Location

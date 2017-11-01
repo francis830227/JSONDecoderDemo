@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Info: Codable {
+struct Info: Decodable {
     let seed: String
     let results: Int
     let page: Int

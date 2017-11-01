@@ -12,14 +12,27 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        parse()
     }
-
+    
+    func parse() {
+        guard let url = URL(string: "https://randomuser.me/api/") else { return }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, _, _) in
+            guard let data = data else { return }
+            print(data)
+            do {
+                let user = try JSONDecoder().decode(User.self, from: data)
+                print(user)
+            } catch {
+                print("error")
+            }
+        }
+        task.resume()
+    }
 
 }
 

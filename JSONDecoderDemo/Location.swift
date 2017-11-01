@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Location: Codable {
+struct Location: Decodable {
     let street: String
     let city: String
     let state: String

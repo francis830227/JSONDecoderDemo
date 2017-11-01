@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Picture: Codable {
+struct Picture: Decodable {
     let large: String
     let medium: String
     let thumbnail: String

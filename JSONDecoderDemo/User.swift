@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct User: Codable {
-    let results: [Result]
-    let info: Info
+struct User: Decodable {
+    
+    var results: [Result]
+    
+    var info: Info
 }
+
+

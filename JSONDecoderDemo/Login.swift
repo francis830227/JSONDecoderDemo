@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Login: Codable {
-    let userName: String
+struct Login: Decodable {
+    let username: String
     let password: String
     let salt: String
     let md5: String
